@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кошик - Potion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'MedievalSharp', cursive;
+      background: radial-gradient(circle at top, #041b1b 0%, #010a0a 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(90deg, #00fff7, #a967ff);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .logo-text {
+      color: #320080;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav i {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    nav i:hover {
+      transform: scale(1.2);
+      color: #00ffff;
+    }
+
+    .title {
+      margin: 30px 0 10px;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00fff7;
+    }
+
+    .cart-items {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #111;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #00fff7;
+    }
+
+    .clear-btn {
+      margin-top: 20px;
+      background: linear-gradient(145deg, #bbb, #ddd);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .clear-btn:hover {
+      background: linear-gradient(145deg, #999, #ccc);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/po.png" alt="Logo">
+      <span class="logo-text">Potion</span>
+    </div>
+    <nav>
+      <i class="fas fa-shopping-cart" onclick="location.href='cart.html'"></i>
+      <i class="fas fa-home" onclick="location.href='index.html'"></i>
+      <i class="fas fa-user"></i>
+    </nav>
+  </header>
+
+  <div class="title">Ваш кошик</div>
+
+  <div class="cart-items" id="cart-items">
+    <!-- Тут з'являться товари -->
+  </div>
+
+  <div class="total" id="total-price"></div>
+
+  <button class="clear-btn" onclick="clearCart()">Очистити кошик</button>
+
+  <script>
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceContainer = document.getElementById('total-price');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Кошик порожній.</p>';
+        totalPriceContainer.innerText = '';
+        return;
+      }
+
+      let total = 0;
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<span>${item.name}</span><span>${item.price} золота</span>`;
+        cartItemsContainer.appendChild(div);
+        total += parseInt(item.price);
+      });
+      totalPriceContainer.innerText = `Загальна сума: ${total} золота`;
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      cart.length = 0;
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

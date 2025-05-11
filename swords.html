@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мечі - Potion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+    body {
+      margin: 0;
+      font-family: 'MedievalSharp', cursive;
+      background: radial-gradient(circle at top, #041b1b 0%, #010a0a 100%);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(90deg, #00fff7, #a967ff);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .logo-text {
+      color: #320080;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    nav i {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    nav i:hover {
+      transform: scale(1.2);
+      color: #00ffff;
+    }
+    .title {
+      margin: 30px 0 10px;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00fff7;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+    .product-card {
+      background: #111;
+      border-radius: 15px;
+      width: 220px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,255,255,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,255,255,0.4);
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product-card .info {
+      padding: 15px;
+    }
+    .product-card .info h4 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #00fff7;
+    }
+    .product-card .info p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #ccc;
+    }
+    .product-card .info .price {
+      font-weight: bold;
+      margin: 10px 0;
+      color: #fff;
+    }
+    .buy-btn {
+      background: linear-gradient(145deg, #bbb, #ddd);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .buy-btn:hover {
+      background: linear-gradient(145deg, #999, #ccc);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/po.png" alt="Logo">
+      <span class="logo-text">Potion</span>
+    </div>
+    <nav>
+      <i class="fas fa-shopping-cart" onclick="location.href='cart.html'"></i>
+      <i class="fas fa-home" onclick="location.href='index.html'"></i>
+      <a href="about.html"><i class="fas fa-user"></i></a>
+    </nav>
+  </header>
+
+  <div class="title">Мечі</div>
+
+  <div class="products">
+    <div class="product-card" data-name="Меч Вогню" data-price="700">
+      <img src="img/sw1.jpg" alt="Меч Вогню">
+      <div class="info">
+        <h4>Меч Вогню</h4>
+        <p>Палає вогнем і завдає шкоди з ефектом горіння.</p>
+        <div class="price">700 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Меч Криги" data-price="680">
+      <img src="img/sw2.jpg" alt="Меч Криги">
+      <div class="info">
+        <h4>Меч Криги</h4>
+        <p>Заморожує ворога на кілька секунд.</p>
+        <div class="price">680 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Меч Тіней" data-price="800">
+      <img src="img/sw3.jpg" alt="Меч Тіней">
+      <div class="info">
+        <h4>Меч Тіней</h4>
+        <p>Надає шанс ухилення при атаці.</p>
+        <div class="price">800 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Двосічний Меч" data-price="750">
+      <img src="img/sw4.jpg" alt="Двосічний Меч">
+      <div class="info">
+        <h4>Двосічний Меч</h4>
+        <p>Може вражати кілька ворогів одночасно.</p>
+        <div class="price">750 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Магічний Клинок" data-price="900">
+      <img src="img/sw5.jpg" alt="Магічний Клинок">
+      <div class="info">
+        <h4>Магічний Клинок</h4>
+        <p>Підсилює заклинання власника при ударі.</p>
+        <div class="price">900 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.buy-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const card = e.target.closest('.product-card');
+        const name = card.getAttribute('data-name');
+        const price = card.getAttribute('data-price');
+        const product = { name, price };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} додано до кошика!`);
+      });
+    });
+  </script>
+</body>
+</html>

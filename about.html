@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Про нас — Магазин Артефактів</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'MedievalSharp', cursive;
+      background: radial-gradient(circle at top, #041b1b 0%, #010a0a 100%);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #00fff7, #a967ff);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .logo-text {
+      color: #320080;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav i {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    nav i:hover {
+      transform: scale(1.2);
+      color: #00ffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00fff7;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #a967ff;
+      margin-top: 30px;
+    }
+
+    p, li {
+      font-size: 18px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background: #111;
+      padding: 20px 10px;
+      color: #ccc;
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #ccc;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #00ffff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/po.png" alt="Logo">
+      <span class="logo-text">Potion</span>
+    </div>
+    <nav>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+      <i class="fas fa-home" onclick="location.href='index.html'"></i>
+      <a href="about.html"><i class="fas fa-user"></i></a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Про нас</h1>
+
+    <h2>Хто ми?</h2>
+    <p>Цей сайт створено Дмитром Шумило — учнем 9 класу, який захоплюється програмуванням, фентезі-світами та пригодами. Його мрія — створити щось унікальне та магічне для інших фанатів артефактів і рольових ігор.</p>
+
+    <h2>Мета сайту</h2>
+    <p>“Potion” — це не просто магазин, а портал у світ магії, де кожен може знайти свою чарівну річ: зілля, амулети, мечі чи броню. Наша мета — надихати, вражати й дарувати магію навіть через екран.</p>
+
+    <h2>Зв’язок з нами</h2>
+    <p>Якщо у вас є питання, ідеї чи бажаєте приєднатися до нашої спільноти — пишіть нам:</p>
+    <ul>
+      <li>Email: artifactshop@example.com</li>
+      <li>Телефон: +380 67 123 4567</li>
+      <li>Instagram: <a href="#">@potion_mag</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Магазин Артефактів. Усі права захищено.</p>
+    <p><a href="index.html">На головну</a></p>
+  </footer>
+</body>
+</html>

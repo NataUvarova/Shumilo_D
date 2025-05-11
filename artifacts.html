@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Артефакти - Potion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+    body {
+      margin: 0;
+      font-family: 'MedievalSharp', cursive;
+      background: radial-gradient(circle at top, #041b1b 0%, #010a0a 100%);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(90deg, #00fff7, #a967ff);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .logo-text {
+      color: #320080;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    nav i {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    nav i:hover {
+      transform: scale(1.2);
+      color: #00ffff;
+    }
+    .title {
+      margin: 30px 0 10px;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00fff7;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+    .product-card {
+      background: #111;
+      border-radius: 15px;
+      width: 220px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,255,255,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,255,255,0.4);
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product-card .info {
+      padding: 15px;
+    }
+    .product-card .info h4 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #00fff7;
+    }
+    .product-card .info p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #ccc;
+    }
+    .product-card .info .price {
+      font-weight: bold;
+      margin: 10px 0;
+      color: #fff;
+    }
+    .buy-btn {
+      background: linear-gradient(145deg, #bbb, #ddd);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .buy-btn:hover {
+      background: linear-gradient(145deg, #999, #ccc);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/po.png" alt="Logo">
+      <span class="logo-text">Potion</span>
+    </div>
+    <nav>
+      <i class="fas fa-shopping-cart" onclick="location.href='cart.html'"></i>
+      <i class="fas fa-home" onclick="location.href='index.html'"></i>
+      <a href="about.html"><i class="fas fa-user"></i></a>
+    </nav>
+  </header>
+  <div class="title">Артефакти</div>
+  <div class="products">
+    <div class="product-card" data-name="Кристал Мани" data-price="400">
+      <img src="img/ar1.jpg" alt="Кристал Мани">
+      <div class="info">
+        <h4>Кристал Мани</h4>
+        <p>Відновлює ману з часом.</p>
+        <div class="price">400 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+    <div class="product-card" data-name="Книга Таємниць" data-price="500">
+      <img src="img/ar2.jpg" alt="Книга Таємниць">
+      <div class="info">
+        <h4>Книга Таємниць</h4>
+        <p>Розблокує додаткові заклинання.</p>
+        <div class="price">500 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+    <div class="product-card" data-name="Кулон Прозріння" data-price="350">
+      <img src="img/ar3.jpg" alt="Кулон Прозріння">
+      <div class="info">
+        <h4>Кулон Прозріння</h4>
+        <p>Покращує інтуїцію та бачення.</p>
+        <div class="price">350 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+    <div class="product-card" data-name="Магічна Сфера" data-price="600">
+      <img src="img/ar4.jpg" alt="Магічна Сфера">
+      <div class="info">
+        <h4>Магічна Сфера</h4>
+        <p>Накладає магічний щит навколо користувача.</p>
+        <div class="price">600 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+    <div class="product-card" data-name="Камінь Душ" data-price="700">
+      <img src="img/ar5.jpg" alt="Камінь Душ">
+      <div class="info">
+        <h4>Камінь Душ</h4>
+        <p>Містить силу стародавніх духів.</p>
+        <div class="price">700 золота</div>
+        <button class="buy-btn">Купити</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.buy-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const card = e.target.closest('.product-card');
+        const name = card.getAttribute('data-name');
+        const price = card.getAttribute('data-price');
+        const product = { name, price };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} додано до кошика!`);
+      });
+    });
+  </script>
+</body>
+</html>
